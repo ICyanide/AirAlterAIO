@@ -79,10 +79,15 @@ public class Methods {
 				Bank.withdraw(Variables.TALISMAN_ID, 1);
 				Task.sleep(20, 40);
 			} else {
-				Bank.withdraw(Variables.TALISMAN_ID, 1);
+				if(Inventory.getItem(Variables.TALISMAN_ID) == null) {
+					Bank.withdraw(Variables.TALISMAN_ID, 1);
+					Task.sleep(20, 40);
+				}
 			}
-			Bank.withdraw(Variables.ESSENCE_ID, 26);
-			Task.sleep(20, 40);
+			if(Inventory.getItem(Variables.ESSENCE_ID) == null) {
+				Bank.withdraw(Variables.ESSENCE_ID, 26);
+				Task.sleep(20, 40);
+			}
 		} else {
 			Bank.withdraw(Variables.ESSENCE_ID, 28);
 			Task.sleep(20, 40);
