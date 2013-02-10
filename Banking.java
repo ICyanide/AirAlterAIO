@@ -13,7 +13,6 @@ public class Banking extends Node {
 
 	@Override
 	public void execute() {
-		Variables.runningNode = "Banking";
 		
 		if(Inventory.isFull() && !Bank.isOpen()) {
 			Variables.status = "Leaving Bank...";

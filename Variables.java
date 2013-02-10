@@ -8,10 +8,12 @@ public class Variables {
 	public static int ELEMENTALRUNE_ID;
 	public static int CRAFTEDRUNE_ID;
 	public static int ESSENCE_ID;
+	public static int numRuns = 0;
+	public static int runesMadeThisRun = 0;
+	public static int totalRunesMade = 0;
+	
 	
 	public static String status = "Loading...";
-	public static String dynamicSleepStatus = "Not In";
-	public static String runningNode = "None";
 	
 	public static boolean playerIsInAlterEntrance() {
 		Area alterEntrance = Areas.AlterEntrence;

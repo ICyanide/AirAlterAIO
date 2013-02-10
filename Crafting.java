@@ -13,7 +13,6 @@ public class Crafting extends Node {
 
 	@Override
 	public void execute() {
-		Variables.runningNode = "Crafting";
 		
 		if(Variables.playerIsInAlterEntrance()) {
 			if(Inventory.getItem(Variables.ESSENCE_ID) != null) {

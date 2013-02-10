@@ -28,7 +28,7 @@ import org.powerbot.game.api.methods.input.Mouse;
 import org.powerbot.game.api.util.Random;
 import org.powerbot.game.api.util.Timer;
 
-@Manifest(authors = { "ICyanide" }, description = "Crafts runes at the Air Alter", name = "CyanAirAlter")
+@Manifest(authors = { "ICyanide" }, description = "Crafts runes at the Air Alter", name = "CyanAirAlter AIO")
 public class main extends ActiveScript implements PaintListener {
 	
 	public static Timer timer = new Timer(0);
@@ -72,9 +72,10 @@ public class main extends ActiveScript implements PaintListener {
 	public void onRepaint(Graphics g1) {
 		final Graphics2D g = (Graphics2D) g1;
 		final Point p = Mouse.getLocation();
-		String dynamicSleepStatus = Variables.dynamicSleepStatus;
 		String status = Variables.status;
-		String node = Variables.runningNode;
+		int CraftedRunesMade = Variables.totalRunesMade;
+		int runsPH = (Variables.numRuns * 3600000) / (int)timer.getElapsed();
+		
 		
 		//my black box
 		g.setColor(Color.black);
@@ -84,17 +85,19 @@ public class main extends ActiveScript implements PaintListener {
 		g.setColor(Color.green);
 		g.drawString(String.format("Time Running: %s", timer.toElapsedString()), 15, 410);
 		g.drawString("Status: " + status , 15, 425);
-		g.drawString("Dynamic Sleep Status: " + dynamicSleepStatus , 15, 440);
-		g.drawString("Running Node: " + node , 15, 455);
+		g.drawString("Total runs: " + Variables.numRuns , 15, 440);
+		g.drawString("Total runs per hour: " + runsPH , 15, 455);
+		g.drawString("Runes Crafted: " + CraftedRunesMade , 15, 470);
+		
 
 		
 		// mouse graphics
-				g.setColor(Mouse.isPressed() ? Color.BLUE : Color.CYAN);
-				g.fillOval(p.x - 4, p.y - 4, 8, 8);
-				g.setColor(Color.BLACK);
-				g.drawOval(p.x - 4, p.y - 4, 8, 8);
-				g.setColor(Color.RED);
-				g.fillOval(p.x - 2, p.y - 2, 4, 4);
+			g.setColor(Mouse.isPressed() ? Color.BLUE : Color.CYAN);
+			g.fillOval(p.x - 4, p.y - 4, 8, 8);
+			g.setColor(Color.BLACK);
+			g.drawOval(p.x - 4, p.y - 4, 8, 8);
+			g.setColor(Color.RED);
+			g.fillOval(p.x - 2, p.y - 2, 4, 4);
 	}
 
 	@SuppressWarnings("serial")

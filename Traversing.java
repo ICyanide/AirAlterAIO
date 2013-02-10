@@ -15,7 +15,6 @@ public class Traversing extends Node {
 
 	@Override
 	public void execute() {
-		Variables.runningNode = "Traversing";
 		Methods.Rest();
 		
 		if(Inventory.getItem(Variables.CRAFTEDRUNE_ID) != null) {
