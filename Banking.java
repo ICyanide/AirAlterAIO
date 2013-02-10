@@ -28,11 +28,9 @@ public class Banking extends Node {
 		if(Bank.isOpen()) {
 			Variables.status = "Banking...";
 			sleep(20, 40);
-			Methods.deposit();
-			sleep(20, 40);
 			Methods.neckyCheck();
 			sleep(20, 40);
-			Methods.withdraw();
+			Methods.doBanking();
 			sleep(200, 400);
 		}
 	}

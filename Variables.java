@@ -1,5 +1,4 @@
 import org.powerbot.game.api.methods.interactive.Players;
-import org.powerbot.game.api.util.Timer;
 import org.powerbot.game.api.wrappers.Area;
 
 
@@ -13,9 +12,6 @@ public class Variables {
 	public static String status = "Loading...";
 	public static String dynamicSleepStatus = "Not In";
 	public static String runningNode = "None";
-	
-	public static Timer fifteenSeconds = new Timer(15000);
-	public static Timer twoMinutes = new Timer(120000);
 	
 	public static boolean playerIsInAlterEntrance() {
 		Area alterEntrance = Areas.AlterEntrence;

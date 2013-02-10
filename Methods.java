@@ -29,22 +29,6 @@ public class Methods {
 		Task.sleep(200, 400);
 	}
 
-	public static void deposit() {
-		if(Variables.CRAFTEDRUNE_ID != 556) {
-			Task.sleep(20, 40);
-			if(Inventory.getItem(Variables.CRAFTEDRUNE_ID) != null) {
-				Task.sleep(20, 40);
-				Bank.deposit(Variables.CRAFTEDRUNE_ID, 26);
-				Task.sleep(20, 40);
-			}
-		} else {
-			if(Inventory.getItem(Variables.CRAFTEDRUNE_ID) != null) {
-				Task.sleep(20, 40);
-				Bank.deposit(Variables.CRAFTEDRUNE_ID, 999);
-				Task.sleep(20, 40);
-			}
-		}
-	}
 
 	public static void neckyCheck() {
 		if(!checkForNecky()) {
@@ -71,7 +55,13 @@ public class Methods {
 		return false;
 	}
 
-	public static void withdraw() {
+	public static void doBanking() {
+		if(Inventory.getItem(Variables.CRAFTEDRUNE_ID) != null) {
+			Task.sleep(20, 40);
+			Bank.deposit(Variables.CRAFTEDRUNE_ID, 999);
+			Task.sleep(20, 40);
+		}
+		
 		if(Variables.ELEMENTALRUNE_ID != 556) {
 			if(Inventory.getItem(Variables.ELEMENTALRUNE_ID) == null) {
 				Bank.withdraw(Variables.ELEMENTALRUNE_ID, 999999);
@@ -154,6 +144,5 @@ public class Methods {
 			DynamicSleep.whileCrafting();
 			Task.sleep(200, 400);
 		}
-		
 	}
 }
