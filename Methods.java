@@ -143,6 +143,16 @@ public class Methods {
 			Task.sleep(20, 40);
 			DynamicSleep.whileCrafting();
 			Task.sleep(200, 400);
+		} else {
+			Task.sleep(500, 1000);
+			Walking.walk(SceneEntities.getNearest(2478));
+			Task.sleep(2000, 3000);
+			Camera.turnTo(SceneEntities.getNearest(2478));
+			Task.sleep(500, 1000);
+			SceneEntities.getNearest(2478).interact("Craft-rune");
+			Task.sleep(20, 40);
+			DynamicSleep.whileCrafting();
+			Task.sleep(200, 400);
 		}
 		
 	}

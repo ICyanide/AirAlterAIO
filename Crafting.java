@@ -28,6 +28,7 @@ public class Crafting extends Node {
 		if(Variables.playerIsInsideAlter()) {
 			if(Inventory.getItem(Variables.ESSENCE_ID) != null) {
 				Variables.status = "Crafting Runes...";
+				sleep(20, 40);
 				Methods.craftRunes();
 			} else {
 				Variables.status = "Leaving Alter...";
