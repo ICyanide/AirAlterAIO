@@ -73,6 +73,7 @@ public class main extends ActiveScript implements PaintListener {
 		final Graphics2D g = (Graphics2D) g1;
 		final Point p = Mouse.getLocation();
 		String status = Variables.status;
+		int totalRuns = Variables.numRuns;
 		int CraftedRunesMade = Variables.totalRunesMade;
 		int runsPH = (Variables.numRuns * 3600000) / (int)timer.getElapsed();
 		
@@ -85,7 +86,7 @@ public class main extends ActiveScript implements PaintListener {
 		g.setColor(Color.green);
 		g.drawString(String.format("Time Running: %s", timer.toElapsedString()), 15, 410);
 		g.drawString("Status: " + status , 15, 425);
-		g.drawString("Total runs: " + Variables.numRuns , 15, 440);
+		g.drawString("Total runs: " + totalRuns , 15, 440);
 		g.drawString("Total runs per hour: " + runsPH , 15, 455);
 		g.drawString("Runes Crafted: " + CraftedRunesMade , 15, 470);
 		

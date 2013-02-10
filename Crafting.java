@@ -29,8 +29,12 @@ public class Crafting extends Node {
 				Variables.status = "Crafting Runes...";
 				sleep(20, 40);
 				Methods.craftRunes();
+				Variables.numRuns += 1;
+				Variables.runesMadeThisRun = Inventory.getItem(Variables.CRAFTEDRUNE_ID).getStackSize();
+				Variables.totalRunesMade += Variables.runesMadeThisRun;
 			} else {
 				Variables.status = "Leaving Alter...";
+				sleep(300, 400);
 				Methods.leaveAlter();
 			}
 		}

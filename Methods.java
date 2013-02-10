@@ -132,10 +132,6 @@ public class Methods {
 			SceneEntities.getNearest(2478).interact("Use");
 			Task.sleep(20, 40);
 			DynamicSleep.whileCrafting();
-			Variables.numRuns += 1;
-			Variables.runesMadeThisRun = Inventory.getItem(Variables.CRAFTEDRUNE_ID).getStackSize();
-			Variables.totalRunesMade += Variables.runesMadeThisRun;
-			Variables.numRuns += 1;
 			Task.sleep(200, 400);
 		} else {
 			Task.sleep(500, 1000);
